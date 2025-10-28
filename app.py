@@ -11,7 +11,6 @@ from langchain_community.vectorstores import Chroma
 from langchain.chat_models import init_chat_model
 
 VECTOR_DB_PATH = "./vector_db_manual"
-MODEL_NAME = "gemini-pro" 
 EMBEDDING_MODEL = "models/embedding-001"
 
 if "GOOGLE_API_KEY" not in os.environ:
