@@ -9,6 +9,7 @@ from typing_extensions import List, TypedDict
 from langgraph.graph import START, StateGraph
 from langchain_community.vectorstores import Chroma 
 from langchain.chat_models import init_chat_model
+from flask_cors import CORS
 
 VECTOR_DB_PATH = "./vector_db_manual"
 EMBEDDING_MODEL = "models/embedding-001"
@@ -18,6 +19,7 @@ if "GOOGLE_API_KEY" not in os.environ:
     sys.exit(1)
 
 app = Flask(__name__)
+CORS(app)
 try:
     embeddings = GoogleGenerativeAIEmbeddings(model=EMBEDDING_MODEL)
 
